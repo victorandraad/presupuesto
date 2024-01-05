@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+    <div class="top">
+        <div class="form">
+            <label for="altura">Altura</label>
+            <input type="number" id="altura" value="1">
+            <label for="ancho">Ancho</label>
+            <input type="number" id="ancho" value="1">
+            <input type="submit" value="Buscar" id="submit">
+        </div>
+        <div class="pesos">
+            <div>
+                <b>Mosquitero: </b>
+                <span id="mosquitero">$ NaN</span>
+                <input type="number">
+                <button type="button" id="mosquiterobtn">+</button>
+            </div>
+
+            <div>
+                <b>Mosquitero A30: </b>
+                <span id="mosquiteroA30">$ NaN</span>
+                <input type="number">
+                <button type="button" id="mosquiteroA30btn" onclick="">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="resultado">
+        <table border="1">
+            <tr>
+                <th class="tableHead" id="th1"> VENTANA CORREDIZA </th>
+                <th class="tableHead" id="th2"> RAJAS Y PUERTAS HERRERO </th> 
+                <th class="tableHead" id="th3"> VENTANA CORREDIZA MODENA </th>
+                <th class="tableHead" id="th4"> RAJA Y PUERTA MODENA </th>
+            </tr>
+        </table>
+        <br>
+        <table id="tabela">
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Precio
+                </th>
+                <th>
+                    Cantidad
+                </th>
+                <th>
+                    Agregar
+                </th>
+            </tr>
+        </table>
+    </div>
+</main>
+<div class="resumen">
+
+</div>
+<script type="module" src="script.js"></script>
+</body>
+</html>

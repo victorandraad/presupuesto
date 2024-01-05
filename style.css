@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 30px;
+    overflow-x: scroll;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button {
+    border-radius: 30px;
+    padding: 5px;
+    font-size: large;
+}
+
+#submit{
+    cursor: pointer;
+    background-color: rgb(46, 46, 90);
+    color: white;
+}
+
+#submit:hover{
+    background-color: white;
+    color: black;
+}
+
+.pesos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-size: 20px;
+}
+
+.pesos  input {
+    width: 50px
+}
+
+.resultado{
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    border: none;
+    width: 100%;
+}
+
+.tableHead {
+    padding: 10px;
+    border-radius: 10px;
+    border-color: black;
+    cursor: pointer;
+}
+
+
+#tabela th {
+    border-radius: 5px;
+    background-color: rgb(46, 46, 90);
+    color: white;
+}
+
+#tabela td{
+    text-align: center;
+    width: fit-content;
+    border: 1px solid #dddddd;
+}
+
+#tabela td input {
+    width: 95%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#tabela td button{
+    border-radius: 5px;
+    width: 100%;
+}
+
+#tabela td button:hover, #mosquiterobtn:hover, #mosquiteroA30btn:hover {
+    background-color: rgb(46, 46, 90);
+    color: white;
+
+}
