@@ -21,46 +21,47 @@
             <div>
                 <b>Mosquitero: </b>
                 <span id="mosquitero">$ NaN</span>
-                <input type="number">
+                <input type="number" id="qntMosquitero">
                 <button type="button" id="mosquiterobtn">+</button>
             </div>
 
             <div>
                 <b>Mosquitero A30: </b>
                 <span id="mosquiteroA30">$ NaN</span>
-                <input type="number">
-                <button type="button" id="mosquiteroA30btn" onclick="">+</button>
+                <input type="number" id="qntMosquiteroA30">
+                <button type="button" id="mosquiteroA30btn">+</button>
             </div>
         </div>
     </div>
 
     <div class="resultado">
-        <table border="1">
-            <tr>
-                <th class="tableHead" id="th1"> VENTANA CORREDIZA </th>
-                <th class="tableHead" id="th2"> RAJAS Y PUERTAS HERRERO </th> 
-                <th class="tableHead" id="th3"> VENTANA CORREDIZA MODENA </th>
-                <th class="tableHead" id="th4"> RAJA Y PUERTA MODENA </th>
-            </tr>
-        </table>
+        <div class="navigation">
+            <button id="th1" class="tableButton">VENTANA CORREDIZA</button>
+            <button id="th2" class="tableButton">RAJAS Y PUERTAS HERRERO</button>
+            <button id="th3" class="tableButton">VENTANA CORREDIZA MODENA</button>
+            <button id="th4" class="tableButton">RAJA Y PUERTA MODENA</button>
+        </div>
         <br>
-        <table id="tabela">
-            <tr>
-                <th>
-                    Nombre
-                </th>
-                <th>
-                    Precio
-                </th>
-                <th>
-                    Cantidad
-                </th>
-                <th>
-                    Agregar
-                </th>
-            </tr>
-        </table>
+        <div class="table-container">
+            <table id="tabela">
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Precio
+                    </th>
+                    <th>
+                        Cantidad
+                    </th>
+                    <th>
+                        Agregar
+                    </th>
+                </tr>
+            </table>
+        </div>
     </div>
+    
 </main>
 <div class="resumen">
 

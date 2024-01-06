@@ -27,7 +27,7 @@ document.querySelector("#submit").addEventListener("click", function(){
     var altura = Number(document.querySelector("#altura").value)
     var ancho = Number(document.querySelector("#ancho").value)
 
-    if(altura < 0 || ancho < 0){
+    if(altura <= 0 || ancho <= 0){
         alert("Ancho y Altura deben ser mayor que 0")
         document.querySelector("#altura").value = 1
         document.querySelector("#ancho").value = 1
@@ -57,6 +57,39 @@ document.querySelector("#th3").addEventListener("click", function(){
 document.querySelector("#th4").addEventListener("click", function(){
     ordenarTabela(4, Number(altura.value), Number(ancho.value))
 })
+
+document.querySelector("#mosquiterobtn").addEventListener("click", function(){
+    var altura = Number(document.querySelector("#altura").value)
+    var ancho = Number(document.querySelector("#ancho").value)
+
+    let inputValue = Math.trunc(document.querySelector(`#qntMosquitero`).value)
+    if(inputValue>0){
+        let precioFinal = Math.ceil(((altura * 2 + ancho * 2) * precios['COSTO ALUMINIO'] * herreros['Mosquitero 905'] * precios['PORCENTAJE AGREGADO AL MATERIAL'] + precios['MOSQUIT ACC'] + ancho * altura * precios["PRECIO TELA MOSQUITERA"]*2*1.4) * inputValue / 100) * 100
+        resumen.innerHTML += `${inputValue}x Mosquitero ${altura}*${ancho}cm sale ${precioFinal.toLocaleString("es-AR", { style: "currency", currency: "ARS"})}<br>`
+    }
+    else{
+        alert("La cantidad debe ser mayor que 0 y debe ser un numero entero")
+    }
+
+    document.querySelector(`#qntMosquitero`).value = ""
+})
+
+document.querySelector("#mosquiteroA30btn").addEventListener("click", function(){
+    var altura = Number(document.querySelector("#altura").value)
+    var ancho = Number(document.querySelector("#ancho").value)
+
+    let inputValue = Math.trunc(document.querySelector(`#qntMosquiteroA30`).value)
+    if(inputValue>0){
+        let precioFinal = Math.ceil(((altura * 2 + ancho * 2) * precios['COSTO ALUMINIO'] * herreros['Mosquitero a30'] * precios['PORCENTAJE AGREGADO AL MATERIAL'] + precios['MOSQUIT ACC'] + ancho * altura * precios["PRECIO TELA MOSQUITERA"]*2*1.4) * inputValue / 100) * 100
+        resumen.innerHTML += `${inputValue}x Mosquitero ${altura}*${ancho}cm sale ${precioFinal.toLocaleString("es-AR", { style: "currency", currency: "ARS"})}<br>`
+    }
+    else{
+        alert("La cantidad debe ser mayor que 0 y debe ser un numero entero")
+    }
+
+    document.querySelector(`#qntMosquiteroA30`).value = ""
+})
+
 
 function ordenarTabela(n, h, w){
     switch(n){
@@ -180,11 +213,12 @@ function ventanaCorrediza(altura, ancho){
             let inputValue = Math.trunc(document.querySelector(`#value_${c}`).value)
             if(inputValue>0){
                 let precioFinal = Math.ceil(finalPricelist[c] * inputValue / 100) * 100
-                resumen.innerHTML += `${document.querySelector(`#value_${c}`).value}x ${nombresList[c]} ${altura}*${ancho}cm sale ${precioFinal.toLocaleString("es-AR", { style: "currency", currency: "ARS"})}<br>`
+                resumen.innerHTML += `${inputValue}x ${nombresList[c]} ${altura}*${ancho}cm sale ${precioFinal.toLocaleString("es-AR", { style: "currency", currency: "ARS"})}<br>`
             }
             else{
                 alert("La cantidad debe ser mayor que 0 y debe ser un numero entero")
             }
+            document.querySelector(`#value_${c}`).value = ""
         })
     }
 

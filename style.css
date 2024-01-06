@@ -17,6 +17,9 @@ main {
 
 .top{
     display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
 }
@@ -61,18 +64,30 @@ input, button {
     flex-direction: column;
 }
 
+.navigation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 table {
     border: none;
     width: 100%;
 }
 
-.tableHead {
+.tableButton {
     padding: 10px;
+    margin: 2px;
     border-radius: 10px;
     border-color: black;
     cursor: pointer;
 }
 
+#tabela{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 
 #tabela th {
     border-radius: 5px;
@@ -84,10 +99,11 @@ table {
     text-align: center;
     width: fit-content;
     border: 1px solid #dddddd;
+    padding: 5px;
 }
 
 #tabela td input {
-    width: 95%;
+    width: 100%;
     border-radius: 5px;
     text-align: center;
 }
@@ -100,5 +116,17 @@ table {
 #tabela td button:hover, #mosquiterobtn:hover, #mosquiteroA30btn:hover {
     background-color: rgb(46, 46, 90);
     color: white;
+}
 
+@media (max-width: 600px) {
+    #tabela {
+        border: 0;
+    }
+
+    #tabela th, #tabela td {
+        border: 0;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
