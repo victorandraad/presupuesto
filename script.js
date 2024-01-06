@@ -27,7 +27,7 @@ document.querySelector("#submit").addEventListener("click", function(){
     var altura = Number(document.querySelector("#altura").value)
     var ancho = Number(document.querySelector("#ancho").value)
 
-    if(altura < 1 || ancho < 1){
+    if(altura < 0 || ancho < 0){
         alert("Ancho y Altura deben ser mayor que 0")
         document.querySelector("#altura").value = 1
         document.querySelector("#ancho").value = 1
@@ -180,7 +180,7 @@ function ventanaCorrediza(altura, ancho){
             let inputValue = Math.trunc(document.querySelector(`#value_${c}`).value)
             if(inputValue>0){
                 let precioFinal = Math.ceil(finalPricelist[c] * inputValue / 100) * 100
-                resumen.innerHTML += `${document.querySelector(`#value_${c}`).value}x ${nombresList[c]} sale ${precioFinal.toLocaleString("es-AR", { style: "currency", currency: "ARS"})}<br>`
+                resumen.innerHTML += `${document.querySelector(`#value_${c}`).value}x ${nombresList[c]} ${altura}*${ancho}cm sale ${precioFinal.toLocaleString("es-AR", { style: "currency", currency: "ARS"})}<br>`
             }
             else{
                 alert("La cantidad debe ser mayor que 0 y debe ser un numero entero")
